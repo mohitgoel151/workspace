@@ -1,0 +1,30 @@
+﻿Examples:
+Input:  "abb", d = 2
+Output: "bab"
+
+Input:  "aacbbc", d = 3
+Output: "abcabc"
+
+Input: "geeksforgeeks", d = 3
+Output: egkegkesfesor
+
+Input:  "aaa",  d = 2
+Output: Cannot be rearranged
+
+Imp Condition : count of max occuring char should not be greater than (string.length + 1) /2
+
+Solution: The idea is to count frequencies of all characters and consider the most 
+frequent character first and place all occurrences of it as close as possible. After 
+the most frequent character is placed, repeat the same process for remaining characters.
+
+1) Let the given string be str and size of string be n
+
+2) Traverse str, store all characters and their frequencies in a Max Heap MH. 
+The value of frequency decides the order in MH, i.e., the most frequent character is at the root of MH.
+
+3) Make all characters of str as ‘\0′.
+
+4) Do following while MH is not empty.
+…a) Extract the Most frequent character. Let the extracted character be x and its frequency be f.
+…b) Find the first available position in str, i.e., find the first ‘\0′ in str.
+…c) Let the first position be p. Fill x at p, p+d,.. p+(f-1)d
