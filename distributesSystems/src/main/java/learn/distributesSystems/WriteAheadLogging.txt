@@ -1,0 +1,13 @@
+https://en.wikipedia.org/wiki/Write-ahead_logging
+
+Techniques for providing atomicity and durability (two of the ACID properties) in database systems.
+In a system using WAL, all modifications are written to a log before they are applied. Usually both redo 
+and undo information is stored in the log.
+
+The purpose of this can be illustrated by an example. 
+Imagine a program that is in the middle of performing some operation when the machine 
+it is running on loses power. Upon restart, that program might well need to know whether 
+the operation it was performing succeeded, half-succeeded, or failed. If a write-ahead log 
+is used, the program can check this log and compare what it was supposed to be doing when it 
+unexpectedly lost power to what was actually done. On the basis of this comparison, the 
+program could decide to undo what it had started, complete what it had started, or keep things as they are.

@@ -1,0 +1,1 @@
+http://stackoverflow.com/questions/2671858/distributed-sequence-number-generation/5685869
